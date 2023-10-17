@@ -31,7 +31,7 @@ connectDB();
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("Recurring Deposit System API");
+  res.send("QuizBuzz API");
 });
 
 const PORT = process.env.PORT || 5000;
