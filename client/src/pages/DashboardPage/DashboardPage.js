@@ -29,7 +29,7 @@ function DashboardPage() {
         // console.log(localUsername);
         // console.log(selectedQuiz.quizId);
 
-        const response = await axios.post("/api/result/all", {
+        const response = await axios.post("https://quiz-buzz-server.vercel.app/api/result/all", {
           username: localUsername,
           quizId: selectedQuiz.quizId,
         });
@@ -53,7 +53,7 @@ function DashboardPage() {
         const storedUser = localStorage.getItem("user");
         const { username: localUsername } = JSON.parse(storedUser);
 
-        const responseUser = await axios.post("/api/users/current/username", {
+        const responseUser = await axios.post("https://quiz-buzz-server.vercel.app/api/users/current/username", {
           username: localUsername,
         });
 
@@ -65,7 +65,7 @@ function DashboardPage() {
         const createdQuizIds = responseUser.data.quizCreated;
 
         const fetchQuizNameById = async (id) => {
-          const response = await axios.get(`/api/quiz/${id}`);
+          const response = await axios.get(`https://quiz-buzz-server.vercel.app/api/quiz/${id}`);
           sessionStorage.setItem(
             response.data.quizName,
             JSON.stringify(response.data)
@@ -103,7 +103,7 @@ function DashboardPage() {
       try {
         const storedUser = localStorage.getItem("user");
         const { username: localUsername } = JSON.parse(storedUser);
-        const response = await axios.post("/api/users/fetchResultByUsername", {
+        const response = await axios.post("https://quiz-buzz-server.vercel.app/api/users/fetchResultByUsername", {
           username: localUsername,
           quizId: selectedQuiz.quizId,
         });
@@ -183,7 +183,7 @@ function DashboardPage() {
       const { username: localUsername } = JSON.parse(storedUser);
 
       console.log("delete quiz => ", selectedQuiz.quizId);
-      const response = await axios.delete(`/api/quiz/delete`, {
+      const response = await axios.delete(`https://quiz-buzz-server.vercel.app/api/quiz/delete`, {
         data: {
           username: localUsername,
           quizId: selectedQuiz.quizId,

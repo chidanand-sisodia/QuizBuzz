@@ -45,7 +45,7 @@ const RegisterPage = () => {
     }
 
     try {
-      const response = await axios.post("api/users/register", formData);
+      const response = await axios.post("https://quiz-buzz-server.vercel.app/api/users/register", formData);
       if (response.data.message || response.status === 200) {
         // After successful registration, create a Result document
         // try {

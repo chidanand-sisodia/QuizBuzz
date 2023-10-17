@@ -20,7 +20,7 @@ const QuizPage = () => {
 
   const fetchQuizData = useCallback(async () => {
     try {
-      const response = await axios.get(`/api/quiz/${quizId}`);
+      const response = await axios.get(`https://quiz-buzz-server.vercel.app/api/quiz/${quizId}`);
       return response.data;
     } catch (error) {
       console.error("Failed to fetch quiz data", error);
@@ -171,9 +171,9 @@ const QuizPage = () => {
     };
 
     try {
-      await axios.patch("/api/users/saveQuizResults", payload);
+      await axios.patch("https://quiz-buzz-server.vercel.app/api/users/saveQuizResults", payload);
       try {
-        await axios.patch("/api/result/updateQuizResults", payload);
+        await axios.patch("https://quiz-buzz-server.vercel.app/api/result/updateQuizResults", payload);
         console.log("quiz Taken ==> ", payload);
       } catch (error) {
         console.error(

@@ -117,7 +117,7 @@ const CreateQuizPage = () => {
     if (quizIdToUse) {
       // Editing mode
       try {
-        await axios.patch(`/api/quiz/edit`, quizData);
+        await axios.patch(`https://quiz-buzz-server.vercel.app/api/quiz/edit`, quizData);
 
         sessionStorage.clear();
 
@@ -130,9 +130,9 @@ const CreateQuizPage = () => {
     } else {
       // Creation mode
       try {
-        await axios.post("/api/quiz/create", quizData);
-        await axios.patch("/api/users/addQuizToUser", updatingQuizId);
-        await axios.post("/api/result/updateQuizId", addingResult);
+        await axios.post("https://quiz-buzz-server.vercel.app/api/quiz/create", quizData);
+        await axios.patch("https://quiz-buzz-server.vercel.app/api/users/addQuizToUser", updatingQuizId);
+        await axios.post("https://quiz-buzz-server.vercel.app/api/result/updateQuizId", addingResult);
         alert("Quiz created. Quiz ID = " + generatedQuizId);
         navigate("/");
       } catch (error) {

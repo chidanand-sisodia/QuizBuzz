@@ -11,7 +11,7 @@ const HomePage = () => {
 
   const fetchAndNavigateToQuiz = async (quizId) => {
     try {
-      const response = await axios.get(`/api/quiz/${quizId}`);
+      const response = await axios.get(`https://quiz-buzz-server.vercel.app/api/quiz/${quizId}`);
       const quizData = response.data;
 
       // Check if startTime exists and if it's in the future

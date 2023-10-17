@@ -12,7 +12,7 @@ const ForgotPasswordPage = () => {
 
     try {
       // Send a POST request to the backend with the email
-      const response = await axios.post("/api/forgot-password", { email }); // Adjust the endpoint as per your backend setup
+      const response = await axios.post("https://quiz-buzz-server.vercel.app/api/forgot-password", { email }); // Adjust the endpoint as per your backend setup
 
       // Assuming your backend sends a 'message' in the response
       setMessage(response.data.message);
