@@ -1,7 +1,7 @@
 import React from 'react';
 import './HowToPage.css';
-import { FontAwesomeIcon } from '@fontawesome/react-fontawesome';
-import { faSignInAlt, faPencilAlt, faClock, faFileExcel, faTachometerAlt, faQuestionCircle } from '@fontawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt, faPencilAlt, faClock, faFileExcel, faTachometerAlt, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 const HowToPage = () => {
     return (
