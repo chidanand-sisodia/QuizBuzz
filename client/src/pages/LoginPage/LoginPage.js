@@ -25,7 +25,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("api/users/login", formData);
+      const response = await axios.post("https://quiz-buzz-server.vercel.app/api/users/login", formData);
 
       if (response.data && response.data.token) {
         // Save token and user data to local storage
