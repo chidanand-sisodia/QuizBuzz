@@ -24,7 +24,7 @@ apiRouter.use("/quiz", quizRoutes);
 apiRouter.use("/result", resultRoutes);
 
 // Mount the mini router onto the main app under /api endpoint
-app.use("/api", apiRouter);
+app.use("https://quiz-buzz-server.vercel.app/api", apiRouter);
 
 // Connect to MongoDB
 connectDB();
